@@ -19,3 +19,7 @@
 .last {
     margin-top: 20px;
 }
+
+.nav .active {
+    color: gold;
+}

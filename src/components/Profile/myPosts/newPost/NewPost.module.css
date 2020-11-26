@@ -10,6 +10,8 @@
 .posts_main textarea {
     height: 50px;
     width: 100%;
+    resize: none;
+    outline: none;
 }
 
 .posts_main button {
