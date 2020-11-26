@@ -3,7 +3,7 @@ import styles from './Music.module.css';
 const Music = () => {
     return (
         <div >
-            Dialogs
+            Music
         </div>
     )
 }
