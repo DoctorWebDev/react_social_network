@@ -1,0 +1,21 @@
+.nav {
+    grid-area: nav;
+}
+
+.nav div {
+    padding: 15px 0;
+}
+
+.nav a {
+    color: #6d6e71;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.nav a:hover {
+    color: gold;
+}
+
+.last {
+    margin-top: 20px;
+}

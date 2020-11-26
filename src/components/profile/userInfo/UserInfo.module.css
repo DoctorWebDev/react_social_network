@@ -1,0 +1,25 @@
+.content_avatar {
+    margin: 10px 0;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+}
+  
+.content_avatar img {
+    border-radius: 5px;
+    width: 150px;
+    height: 120px;
+}
+
+.content_avatar_descr {
+    display: inline-block;
+    height: 120px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content_avatar_descr h2 {
+    margin-top: 0;
+    color: #149AC9;
+}

@@ -1,0 +1,36 @@
+.posts_main {
+    position: relative;
+    margin: 0 0 30px 0;
+    padding: 0 20px;
+    border-radius: 4px;
+    color: #939598;
+    height: 70px;
+}
+
+.posts_main textarea {
+    height: 50px;
+    width: 100%;
+}
+
+.posts_main button {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.4s;
+
+    margin-top: 10px;
+    border: rgb(142, 185, 211) solid 0.1px;
+    border-radius: 10px;
+    background: rgb(142, 185, 211);
+    height: 30px;
+    width: 80px;
+    outline: none;
+}
+
+.posts_main button:hover { 
+    background: rgb(49, 82, 160); 
+    color: rgb(238, 221, 221);
+}
