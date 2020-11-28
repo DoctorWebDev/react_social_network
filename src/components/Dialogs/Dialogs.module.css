@@ -10,48 +10,6 @@
     height: 600px;
 }
 
-.dialogsItem {
-    display: grid;
-
-    grid-template-areas:
-    'img name'
-    'img lastText';
-    grid-template-rows: 6fr 6fr;
-    grid-template-columns: 2fr 10fr;
-
-    padding: 5px;
-    border-bottom: gainsboro solid 0.5px;
-    height: 75px;
-
-    transition: 1s;
-}
-
-.dialogsItem:hover {
-    border-bottom: lightgreen solid 0.5px;
-}
-
-.dialogsItem img {
-    grid-area: img;
-
-    width: 50px;
-    padding: 10px;
-}
-
-.dialogsItem a {
-    grid-area: name;
-
-    margin: 0;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #149AC9;
-}
-
-.dialogsItem span {
-    grid-area: lastText;
-
-    padding: 0 10px;
-}
-
 .messages {
     display: grid;
 
@@ -59,6 +17,7 @@
     'message'
     'form';
     grid-template-rows: 10fr 2fr;
+
     height: 600px;
     padding: 15px;
 }
@@ -70,76 +29,7 @@
     flex-direction: column;
     justify-content: flex-end;
 
+    height: 500px;
     width: 500px;
-}
-
-.messageItem {
-    display: grid;
-
-    grid-template-areas:
-    'img a'
-    'img span';
-    grid-template-columns: 2fr 10fr;
-    grid-template-rows: 3fr 9fr;
-
-    margin: 15px 0 25px 50px;
-}
-
-.messageItem img {
-    grid-area: img;
-
-    width: 60px;
-}
-
-.messageItem a {
-    grid-area: a;
-
-    text-decoration: none;
-    color: #149AC9;
-}
-
-.messageItem span {
-    grid-area: span;
-
-    padding: 5px;
-}
-
-.messageForm {
-    grid-area: form;
-
-    width: 400px;
-    padding: 30px 60px;
-    background: lavender;
-
-    border-radius: 10px;
-}
-
-.messageForm input {
-    width: 300px;
-    height: 30px;
-    outline: none;
-
-    border: darkkhaki solid 0.5px;
-    border-radius: 12px;
-}
-
-.messageForm button {
-    height: 30px;
-
-    border-radius: 12px;
-    border: darkkhaki solid 0.5px;
-    outline: none;
-    cursor: pointer;
-}
-
-.messageForm button:hover {
-    border: darkgoldenrod solid 0.5px;
-}
-
-.messageForm input:focus {
-    border: darkgoldenrod solid 0.5px;
-}
-
-.messageItem a.active {
-    color: gold;
+    overflow: auto;
 }

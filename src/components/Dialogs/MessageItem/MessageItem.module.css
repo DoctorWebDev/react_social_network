@@ -1,0 +1,30 @@
+.messageItem {
+    display: grid;
+
+    grid-template-areas:
+    'img a'
+    'img span';
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 3fr 9fr;
+
+    margin: 15px 0 25px 50px;
+}
+
+.messageItem img {
+    grid-area: img;
+
+    width: 60px;
+}
+
+.messageItem a {
+    grid-area: a;
+
+    text-decoration: none;
+    color: #149AC9;
+}
+
+.messageItem span {
+    grid-area: span;
+
+    padding: 5px;
+}

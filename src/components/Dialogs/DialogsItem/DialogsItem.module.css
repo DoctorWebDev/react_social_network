@@ -1,0 +1,50 @@
+.dialogsItem {
+    display: grid;
+
+    grid-template-areas:
+    'img name'
+    'img lastText';
+    grid-template-rows: 6fr 6fr;
+    grid-template-columns: 2fr 10fr;
+
+    padding: 5px;
+    border-bottom: gainsboro solid 0.5px;
+    height: 75px;
+
+    transition: 1s;
+}
+
+.dialogsItem:hover {
+    border-bottom: lightgreen solid 0.5px;
+}
+
+.dialogsItem img {
+    grid-area: img;
+
+    width: 50px;
+    padding: 10px;
+}
+
+.dialogsItem a {
+    grid-area: name;
+
+    margin: 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #149AC9;
+    transition: 0.5s;
+}
+
+.dialogsItem span {
+    grid-area: lastText;
+
+    padding: 0 10px;
+}
+
+.dialogsItem a.active {
+    color: gold;
+}
+
+.dialogsItem a:hover {
+    color: gold;
+}

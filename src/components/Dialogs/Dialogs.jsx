@@ -1,58 +1,28 @@
 import styles from './Dialogs.module.css';
-import {NavLink} from "react-router-dom";
+import DialogsItem from "./DialogsItem/DialogsItem";
+import MessageItem from "./MessageItem/MessageItem";
+import MessageForm from "./MessageForm/MessageForm";
 
 const Dialogs = () => {
     return (
         <div className={styles.dialogs}>
             <div className={styles.dialogsList}>
-                <div className={styles.dialogsItem}>
-                    <img className={styles.dialogsImg} src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                    <NavLink to='/dialogs/1' activeClassName={styles.active}>Name</NavLink>
-                    <span>Someone</span>
-                </div>
-
-                <div className={styles.dialogsItem}>
-                    <img className={styles.dialogsImg} src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                    <NavLink to='/dialogs/2' activeClassName={styles.active}>Name</NavLink>
-                    <span>Someone</span>
-                </div>
-
-                <div className={styles.dialogsItem}>
-                    <img className={styles.dialogsImg} src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                    <NavLink to='/dialogs/3' activeClassName={styles.active}>Name</NavLink>
-                    <span>Someone</span>
-                </div>
-
-                <div className={styles.dialogsItem}>
-                    <img className={styles.dialogsImg} src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                    <NavLink to='/dialogs/4' activeClassName={styles.active}>Name</NavLink>
-                    <span>Someone</span>
-                </div>
+                <DialogsItem name='Name' id='1' lasctText='Hi'/>
+                <DialogsItem name='afa' id='2' lasctText='yo'/>
+                <DialogsItem name='Name' id='3' lasctText='NO'/>
+                <DialogsItem name='Name' id='4' lasctText='Yea'/>
+                <DialogsItem name='Name' id='5' lasctText='By'/>
             </div>
 
             <div className={styles.messages}>
                 <div className={styles.messageList}>
-                    <div className={styles.messageItem}>
-                        <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                        <a href="">Name</a>
-                        <span>TextTextTextTextText</span>
-                    </div>
-                    <div className={styles.messageItem}>
-                        <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                        <a href="">Name</a>
-                        <span>TextTextTextTextText</span>
-                    </div>
-                    <div className={styles.messageItem}>
-                        <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-                        <a href="">Name</a>
-                        <span>TextTextTextTextText</span>
-                    </div>
+                    <MessageItem />
+                    <MessageItem />
+                    <MessageItem />
                 </div>
 
-                <div className={styles.messageForm}>
-                    <input type="text"/>
-                    <button>Send</button>
-                </div>
+                <MessageForm />
+
             </div>
         </div>
     )
