@@ -1,11 +1,11 @@
 import styles from './MessageItem.module.css';
 
-const MessageItem = () => {
+const MessageItem = (props) => {
     return (
         <div className={styles.messageItem}>
             <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/avatar-256.png" alt=""/>
-            <a href="">Name</a>
-            <span>TextTextTextTextText</span>
+            <a href="">{props.name}</a>
+            <span>{props.text}</span>
         </div>
     )
 }

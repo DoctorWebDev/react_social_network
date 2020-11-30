@@ -3,12 +3,13 @@ import MyPosts from './myPosts/MyPosts';
 import styles from './Profile.module.css';
 import UserInfo from './userInfo/UserInfo';
 
-const Profile = () => {
+const Profile = ({postsData}) => {
+
     return (
         <div>
             <MainPhoto/>
             <UserInfo/>
-            <MyPosts/>
+            <MyPosts postsData={postsData}/>
         </div>
     )
 }

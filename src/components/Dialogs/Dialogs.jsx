@@ -3,22 +3,23 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import MessageItem from "./MessageItem/MessageItem";
 import MessageForm from "./MessageForm/MessageForm";
 
-const Dialogs = () => {
+const Dialogs = ({dialogsData, messageData}) => {
+
+
+
+    let dialogItem = dialogsData.map(item =>  <DialogsItem name={item.name} id={item.id} key={item.id} lasctText={item.lastText}/>)
+
+    let messageItem = messageData.map(mes => <MessageItem key={mes.id} name={mes.name} text={mes.message}/>)
+
     return (
         <div className={styles.dialogs}>
             <div className={styles.dialogsList}>
-                <DialogsItem name='Name' id='1' lasctText='Hi'/>
-                <DialogsItem name='afa' id='2' lasctText='yo'/>
-                <DialogsItem name='Name' id='3' lasctText='NO'/>
-                <DialogsItem name='Name' id='4' lasctText='Yea'/>
-                <DialogsItem name='Name' id='5' lasctText='By'/>
+                {dialogItem}
             </div>
 
             <div className={styles.messages}>
                 <div className={styles.messageList}>
-                    <MessageItem />
-                    <MessageItem />
-                    <MessageItem />
+                    {messageItem}
                 </div>
 
                 <MessageForm />

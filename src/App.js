@@ -8,15 +8,17 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
-const App = () => {
+const App = ({dialogsData, messageData, postsData}) => {
     return (
         <BrowserRouter>
             <div className="app__wrapper">
                 <Header/>
                 <NavBar/>
                 <div className='app__wrapper__content'>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/profile'
+                           render={() => <Profile postsData={postsData}/>}/>
+                    <Route path='/dialogs'
+                           render={() => <Dialogs dialogsData={dialogsData} messageData={messageData}/>}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>

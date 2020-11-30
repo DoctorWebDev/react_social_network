@@ -33,6 +33,7 @@
     text-decoration: none;
     color: #149AC9;
     transition: 0.5s;
+    max-width: 125px;
 }
 
 .dialogsItem span {

@@ -2,12 +2,14 @@ import styles from './MyPosts.module.css';
 import NewPost from './newPost/NewPost';
 import Post from './post/Post';
 
-const MyPosts = () => {
+const MyPosts = ({postsData}) => {
+
+	let newPost = postsData.map(post => <Post message={post.message} like={post.likeCount}/>);
+
 	return (
 		<div className={styles.content_posts}>
 			<NewPost />
-			<Post message='Hey, how are you?' like='15'/>
-			<Post message='Today we have nice day!' like='5'/>
+			{newPost}
 		</div>
 	)
 }
