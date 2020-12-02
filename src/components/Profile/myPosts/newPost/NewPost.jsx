@@ -1,18 +1,22 @@
 import styles from './NewPost.module.css';
 import React from "react";
 
-const NewPost = ({addPost}) => {
+const NewPost = ({addPost, postText, updatePostText}) => {
 
     let textareaData = React.createRef();
 
     let addNewPost = () => {
-        addPost(textareaData.current.value);
-        textareaData.current.value = '';
-    }
+        addPost();
+    };
+
+    let updateText = () => {
+        let text = textareaData.current.value;
+        updatePostText(text);
+    };
 
     return (
         <div className={styles.posts_main}>
-            <textarea ref={textareaData}/>
+            <textarea onChange={updateText} value={postText} ref={textareaData}/>
             <button onClick={addNewPost}>Send</button>
         </div>
     )

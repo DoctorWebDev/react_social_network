@@ -2,13 +2,15 @@ import styles from './MyPosts.module.css';
 import NewPost from './newPost/NewPost';
 import Post from './post/Post';
 
-const MyPosts = ({postsData, addPost}) => {
+const MyPosts = ({profilePage, addPost, updatePostText}) => {
 
-	let newPost = postsData.map(post => <Post message={post.message} like={post.likeCount}/>);
+	let newPost = profilePage.postsData.map(post => <Post message={post.message} like={post.likeCount}/>);
 
 	return (
 		<div className={styles.content_posts}>
-			<NewPost addPost={addPost}/>
+			<NewPost addPost={addPost}
+					 postText={profilePage.postText}
+					 updatePostText={updatePostText}/>
 			{newPost}
 		</div>
 	)
