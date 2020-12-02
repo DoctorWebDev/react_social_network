@@ -3,13 +3,13 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import MessageItem from "./MessageItem/MessageItem";
 import MessageForm from "./MessageForm/MessageForm";
 
-const Dialogs = ({dialogsData, messageData}) => {
+const Dialogs = ({dialogsPage}) => {
 
 
 
-    let dialogItem = dialogsData.map(item =>  <DialogsItem name={item.name} id={item.id} key={item.id} lasctText={item.lastText}/>)
+    let dialogItem = dialogsPage.dialogsData.map(item =>  <DialogsItem name={item.name} id={item.id} key={item.id} lasctText={item.lastText}/>)
 
-    let messageItem = messageData.map(mes => <MessageItem key={mes.id} name={mes.name} text={mes.message}/>)
+    let messageItem = dialogsPage.messageData.map(mes => <MessageItem key={mes.id} name={mes.name} text={mes.message}/>)
 
     return (
         <div className={styles.dialogs}>

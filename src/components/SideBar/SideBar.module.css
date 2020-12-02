@@ -1,0 +1,14 @@
+.sideBar__wrapper {
+    padding-top: 30px;
+
+    top: 400px;
+    position: absolute;
+    width: 198px;
+    height: 150px;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

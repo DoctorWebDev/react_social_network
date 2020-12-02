@@ -1,0 +1,20 @@
+.sideBarItem {
+    margin: 0;
+
+    width: 60px;
+    height: 80px;
+}
+
+.sideBarItem img {
+    width: 50px;
+}
+
+.sideBarItem a {
+    color: #6d6e71;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.sideBarItem a:hover {
+    color: gold;
+}

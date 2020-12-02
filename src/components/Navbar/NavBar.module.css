@@ -1,5 +1,7 @@
 .nav {
     grid-area: nav;
+
+    height: 400px;
 }
 
 .nav div {
