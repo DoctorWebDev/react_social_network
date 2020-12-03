@@ -3,7 +3,7 @@ import DialogsItem from "./DialogsItem/DialogsItem";
 import MessageItem from "./MessageItem/MessageItem";
 import MessageForm from "./MessageForm/MessageForm";
 
-const Dialogs = ({dialogsPage, updateMessageText, addMessage}) => {
+const Dialogs = ({dialogsPage, dispatch}) => {
 
 
 
@@ -26,9 +26,8 @@ const Dialogs = ({dialogsPage, updateMessageText, addMessage}) => {
                     {messageItem}
                 </div>
 
-                <MessageForm updateMessageText={updateMessageText}
-                             dialogsPage={dialogsPage}
-                             addMessage={addMessage}/>
+                <MessageForm dispatch={dispatch}
+                             dialogsPage={dialogsPage}/>
 
             </div>
         </div>

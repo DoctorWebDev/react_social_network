@@ -9,7 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import SideBar from "./components/SideBar/SideBar";
 
-const App = ({state, addPost, updatePostText, updateMessageText, addMessage}) => {
+const App = ({state, dispatch}) => {
     return (
         <div className="app__wrapper">
             <Header/>
@@ -18,12 +18,10 @@ const App = ({state, addPost, updatePostText, updateMessageText, addMessage}) =>
             <div className='app__wrapper__content'>
                 <Route path='/profile'
                        render={() => <Profile profilePage={state.profilePage}
-                                              addPost={addPost}
-                                              updatePostText={updatePostText}/>}/>
+                                              dispatch={dispatch}/>}/>
                 <Route path='/dialogs'
                        render={() => <Dialogs dialogsPage={state.dialogsPage}
-                                              updateMessageText={updateMessageText}
-                                              addMessage={addMessage}/>}/>
+                                              dispatch={dispatch}/>}/>
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/settings' component={Settings}/>

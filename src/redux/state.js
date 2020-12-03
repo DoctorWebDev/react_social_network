@@ -33,16 +33,18 @@ let store = {
             ]
         }
     },
-    getState() {
-        return this._state;
-    },
     _callSubscriber() {
 
+    },
+
+    getState() {
+        return this._state;
     },
     subscriber(observer) {
         this._callSubscriber = observer;
     },
-    addPost() {
+
+    _addPost() {
         let newPost = {
             id: 3,
             message: this._state.profilePage.postText,
@@ -53,11 +55,11 @@ let store = {
         this._state.profilePage.postText = '';
         this._callSubscriber(this._state);
     },
-    updatePostText(newText) {
+    _updatePostText(newText) {
         this._state.profilePage.postText = newText;
         this._callSubscriber(this._state);
     },
-    addMessage() {
+    _addMessage() {
         let newMess = {
             id: 4,
             name: 'MyName',
@@ -68,10 +70,23 @@ let store = {
         this._state.dialogsPage.messageText = '';
         this._callSubscriber(this._state);
     },
-    updateMessageText(newText) {
+    _updateMessageText(newText) {
         this._state.dialogsPage.messageText = newText;
         this._callSubscriber(this._state);
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            this._addPost();
+        } else if (action.type === 'UPDATE-POST-TEXT') {
+            this._updatePostText(action.newText);
+        } else if (action.type === 'ADD-MESSAGE') {
+            this._addMessage();
+        } else if (action.type === 'UPDATE-MESSAGE-TEXT') {
+            this._updateMessageText(action.newText);
+        }
     }
+
 };
 
 window.store = store;

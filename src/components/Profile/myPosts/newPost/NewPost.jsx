@@ -1,17 +1,17 @@
 import styles from './NewPost.module.css';
 import React from "react";
 
-const NewPost = ({addPost, postText, updatePostText}) => {
+const NewPost = ({dispatch, postText}) => {
 
     let textareaData = React.createRef();
 
     let addNewPost = () => {
-        addPost();
+        dispatch({type: 'ADD-POST'});
     };
 
     let updateText = () => {
         let text = textareaData.current.value;
-        updatePostText(text);
+        dispatch({type: 'UPDATE-POST-TEXT', newText: text})
     };
 
     return (

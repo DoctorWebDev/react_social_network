@@ -1,17 +1,17 @@
 import styles from './MessageForm.module.css'
 import React from "react";
 
-const MessageForm = ({updateMessageText, dialogsPage, addMessage}) => {
+const MessageForm = ({dispatch, dialogsPage}) => {
 
     let inputRef = React.createRef();
 
     let sendMessage = () => {
-        addMessage();
+        dispatch({type: 'ADD-MESSAGE'})
     };
 
     let updateInput = () => {
         let text = inputRef.current.value;
-        updateMessageText(text);
+        dispatch({type: 'UPDATE-MESSAGE-TEXT', newText: text})
     };
 
     return (
