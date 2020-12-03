@@ -1,17 +1,18 @@
 import styles from './NewPost.module.css';
 import React from "react";
+import {addPostActionCreator, updatePostTextActionCreator} from "../../../../redux/state";
 
 const NewPost = ({dispatch, postText}) => {
 
     let textareaData = React.createRef();
 
     let addNewPost = () => {
-        dispatch({type: 'ADD-POST'});
+        dispatch(addPostActionCreator());
     };
 
     let updateText = () => {
         let text = textareaData.current.value;
-        dispatch({type: 'UPDATE-POST-TEXT', newText: text})
+        dispatch(updatePostTextActionCreator(text));
     };
 
     return (

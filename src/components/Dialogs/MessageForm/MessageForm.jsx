@@ -1,17 +1,18 @@
 import styles from './MessageForm.module.css'
 import React from "react";
+import {addMessageActionCreator, updateMessageTextActionCreator} from "../../../redux/state";
 
 const MessageForm = ({dispatch, dialogsPage}) => {
 
     let inputRef = React.createRef();
 
     let sendMessage = () => {
-        dispatch({type: 'ADD-MESSAGE'})
+        dispatch(addMessageActionCreator());
     };
 
     let updateInput = () => {
         let text = inputRef.current.value;
-        dispatch({type: 'UPDATE-MESSAGE-TEXT', newText: text})
+        dispatch(updateMessageTextActionCreator(text));
     };
 
     return (
