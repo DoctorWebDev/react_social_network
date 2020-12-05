@@ -15,6 +15,7 @@ const App = ({state, dispatch}) => {
             <Header/>
             <NavBar/>
             <SideBar state={state.sideBar}/>
+
             <div className='app__wrapper__content'>
                 <Route path='/profile'
                        render={() => <Profile profilePage={state.profilePage}
