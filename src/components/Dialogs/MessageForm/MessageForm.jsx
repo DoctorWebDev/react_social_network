@@ -1,22 +1,20 @@
 import styles from './MessageForm.module.css'
 import React from "react";
-import {addMessageActionCreator, updateMessageTextActionCreator} from "../../../redux/dialogsReducer";
 
-const MessageForm = ({dispatch, dialogsPage}) => {
+const MessageForm = ({onSendMessage, onUpdateInput}) => {
 
     let sendMessage = () => {
-        dispatch(addMessageActionCreator());
+        onSendMessage();
     };
 
     let updateInput = (event) => {
         let text = event.target.value;
-        dispatch(updateMessageTextActionCreator(text));
+        onUpdateInput(text);
     };
 
     return (
         <div className={styles.messageForm}>
-            <input value={dialogsPage.messageText}
-                   onChange={updateInput}/>
+            <input onChange={updateInput}/>
 
             <button onClick={sendMessage}>Send</button>
         </div>

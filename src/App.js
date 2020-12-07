@@ -9,7 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import SideBar from "./components/SideBar/SideBar";
 
-const App = ({state, dispatch}) => {
+const App = ({state, store}) => {
     return (
         <div className="app__wrapper">
             <Header/>
@@ -18,11 +18,11 @@ const App = ({state, dispatch}) => {
 
             <div className='app__wrapper__content'>
                 <Route path='/profile'
-                       render={() => <Profile profilePage={state.profilePage}
-                                              dispatch={dispatch}/>}/>
+                       render={() => <Profile store={store}/>}/>
+
                 <Route path='/dialogs'
-                       render={() => <Dialogs dialogsPage={state.dialogsPage}
-                                              dispatch={dispatch}/>}/>
+                       render={() => <Dialogs store={store}/>}/>
+
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/settings' component={Settings}/>

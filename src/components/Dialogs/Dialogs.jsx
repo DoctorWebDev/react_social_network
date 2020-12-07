@@ -1,17 +1,17 @@
 import styles from './Dialogs.module.css';
 import DialogsItem from "./DialogsItem/DialogsItem";
 import MessageItem from "./MessageItem/MessageItem";
-import MessageForm from "./MessageForm/MessageForm";
+import MessageFormContainer from "./MessageForm/MessageFormContainer";
 
-const Dialogs = ({dialogsPage, dispatch}) => {
+const Dialogs = ({store}) => {
 
+    let state = store.getState();
 
-
-    let dialogItem = dialogsPage.dialogsData.map(item =>  <DialogsItem name={item.name}
+    let dialogItem = state.dialogsPage.dialogsData.map(item =>  <DialogsItem name={item.name}
                                                                        id={item.id} key={item.id}
                                                                        lasctText={item.lastText}/>)
 
-    let messageItem = dialogsPage.messageData.map(mes => <MessageItem key={mes.id}
+    let messageItem = state.dialogsPage.messageData.map(mes => <MessageItem key={mes.id}
                                                                       name={mes.name}
                                                                       text={mes.message}/>)
 
@@ -26,8 +26,7 @@ const Dialogs = ({dialogsPage, dispatch}) => {
                     {messageItem}
                 </div>
 
-                <MessageForm dispatch={dispatch}
-                             dialogsPage={dialogsPage}/>
+                <MessageFormContainer store={store}/>
 
             </div>
         </div>

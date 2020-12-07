@@ -1,21 +1,20 @@
 import styles from './NewPost.module.css';
 import React from "react";
-import {addPostActionCreator, updatePostTextActionCreator} from "../../../../redux/profileReducer";
 
-const NewPost = ({dispatch, postText}) => {
+const NewPost = ({onAddNewPost, onUpdateText}) => {
     let addNewPost = () => {
-        dispatch(addPostActionCreator());
+        onAddNewPost();
     };
 
     let updateText = (event) => {
         let text = event.target.value;
-        dispatch(updatePostTextActionCreator(text));
+        onUpdateText(text);
     };
 
     return (
         <div className={styles.posts_main}>
-            <textarea onChange={updateText}
-                      value={postText} />
+            <textarea onChange={updateText} />
+
             <button onClick={addNewPost}>Send</button>
         </div>
     )
