@@ -3,25 +3,25 @@ import {Route} from "react-router-dom";
 import Header from './components/Header/Header';
 import NavBar from './components/Navbar/NavBar';
 import Profile from './components/Profile/Profile';
-import Dialogs from "./components/Dialogs/Dialogs";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import SideBar from "./components/SideBar/SideBar";
+import SideBarContainer from "./components/SideBar/SideBarContainer";
+import DialogsContrainer from "./components/Dialogs/Dialogs.container";
 
-const App = ({state, store}) => {
+const App = () => {
     return (
         <div className="app__wrapper">
             <Header/>
             <NavBar/>
-            <SideBar state={state.sideBar}/>
+            <SideBarContainer/>
 
             <div className='app__wrapper__content'>
                 <Route path='/profile'
-                       render={() => <Profile store={store}/>}/>
+                       render={() => <Profile />}/>
 
                 <Route path='/dialogs'
-                       render={() => <Dialogs store={store}/>}/>
+                       render={() => <DialogsContrainer/>}/>
 
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>

@@ -1,17 +1,15 @@
 import styles from './Dialogs.module.css';
 import DialogsItem from "./DialogsItem/DialogsItem";
 import MessageItem from "./MessageItem/MessageItem";
-import MessageFormContainer from "./MessageForm/MessageFormContainer";
+import MessageForm from "./MessageForm/MessageForm";
 
-const Dialogs = ({store}) => {
+const Dialogs = ({dialogsPage, onSendMessage, onUpdateInput}) => {
 
-    let state = store.getState();
-
-    let dialogItem = state.dialogsPage.dialogsData.map(item =>  <DialogsItem name={item.name}
+    let dialogItem = dialogsPage.dialogsData.map(item =>  <DialogsItem name={item.name}
                                                                        id={item.id} key={item.id}
                                                                        lasctText={item.lastText}/>)
 
-    let messageItem = state.dialogsPage.messageData.map(mes => <MessageItem key={mes.id}
+    let messageItem = dialogsPage.messageData.map(mes => <MessageItem key={mes.id}
                                                                       name={mes.name}
                                                                       text={mes.message}/>)
 
@@ -26,7 +24,9 @@ const Dialogs = ({store}) => {
                     {messageItem}
                 </div>
 
-                <MessageFormContainer store={store}/>
+                <MessageForm onSendMessage={onSendMessage}
+                             onUpdateInput={onUpdateInput}
+                             newText={dialogsPage.messageText}/>
 
             </div>
         </div>

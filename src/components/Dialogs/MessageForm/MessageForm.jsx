@@ -1,7 +1,7 @@
 import styles from './MessageForm.module.css'
 import React from "react";
 
-const MessageForm = ({onSendMessage, onUpdateInput}) => {
+const MessageForm = ({onSendMessage, onUpdateInput, newText}) => {
 
     let sendMessage = () => {
         onSendMessage();
@@ -14,7 +14,8 @@ const MessageForm = ({onSendMessage, onUpdateInput}) => {
 
     return (
         <div className={styles.messageForm}>
-            <input onChange={updateInput}/>
+            <input onChange={updateInput}
+                   value={newText}/>
 
             <button onClick={sendMessage}>Send</button>
         </div>

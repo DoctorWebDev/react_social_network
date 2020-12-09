@@ -1,15 +1,15 @@
 import MainPhoto from './mainPhoto/MainPhoto';
-import MyPosts from './myPosts/MyPosts';
 import styles from './Profile.module.css';
 import UserInfo from './userInfo/UserInfo';
+import MyPostsContainer from "./myPosts/MyPostsContainer";
 
-const Profile = ({store}) => {
+const Profile = () => {
 
     return (
         <div>
             <MainPhoto/>
             <UserInfo/>
-            <MyPosts store={store}/>
+            <MyPostsContainer />
         </div>
     )
 }

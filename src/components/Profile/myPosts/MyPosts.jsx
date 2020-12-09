@@ -1,14 +1,15 @@
 import styles from './MyPosts.module.css';
 import Post from './post/Post';
-import NewPostContainer from "./newPost/NewPostContainer";
+import NewPost from "./newPost/NewPost";
 
-const MyPosts = ({store}) => {
-	let state = store.getState();
-	let newPost = state.profilePage.postsData.map(post => <Post message={post.message} like={post.likeCount}/>);
+const MyPosts = ({profilePage, onAddNewPost, onUpdateText}) => {
+	let newPost = profilePage.postsData.map(post => <Post message={post.message} like={post.likeCount}/>);
 
 	return (
 		<div className={styles.content_posts}>
-			<NewPostContainer store={store}/>
+			<NewPost onAddNewPost={onAddNewPost}
+					 onUpdateText={onUpdateText}
+					 newText={profilePage.postText}/>
 			{newPost}
 		</div>
 	)
