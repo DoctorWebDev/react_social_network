@@ -1,0 +1,61 @@
+.userItem {
+    display: flex;
+    flex-direction: row;
+
+    padding: 5px;
+    border-bottom: gainsboro solid 0.5px;
+    height: 150px;
+
+    transition: 1s;
+}
+
+.userItem:hover {
+    border-bottom: lightgreen solid 0.5px;
+}
+
+.userItem .img img{
+    width: 100px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.userItem h3 {
+    min-width: 100px;
+    max-width: 100px;
+    margin-top: 30px;
+    color: #413E3E;
+}
+
+.userDescr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 10px 50px;
+    min-width: 500px;
+    max-width: 500px;
+}
+
+.userDescr .userDescr_status {
+    font-style: italic;
+}
+
+.btn {
+    margin: auto 0;
+}
+
+.btn button {
+    cursor: pointer;
+
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.4s;
+
+    margin-top: 10px;
+    border: rgb(142, 185, 211) solid 0.1px;
+    border-radius: 10px;
+    background: rgb(142, 185, 211);
+    height: 30px;
+    width: 80px;
+    outline: none;
+}

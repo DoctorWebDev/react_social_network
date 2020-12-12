@@ -18,6 +18,6 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 }
-const DialogsContrainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
-export default DialogsContrainer;
+export default DialogsContainer;

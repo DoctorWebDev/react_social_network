@@ -4,10 +4,10 @@ import Header from './components/Header/Header';
 import NavBar from './components/Navbar/NavBar';
 import Profile from './components/Profile/Profile';
 import News from "./components/News/News";
-import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import SideBarContainer from "./components/SideBar/SideBarContainer";
-import DialogsContrainer from "./components/Dialogs/Dialogs.container";
+import DialogsContainer from "./components/Dialogs/Dialogs.container";
+import UserContainer from "./components/Users/UserContainer";
 
 const App = () => {
     return (
@@ -21,10 +21,10 @@ const App = () => {
                        render={() => <Profile />}/>
 
                 <Route path='/dialogs'
-                       render={() => <DialogsContrainer/>}/>
+                       render={() => <DialogsContainer/>}/>
 
                 <Route path='/news' component={News}/>
-                <Route path='/music' component={Music}/>
+                <Route path='/users' render={() => <UserContainer />}/>
                 <Route path='/settings' component={Settings}/>
             </div>
         </div>
