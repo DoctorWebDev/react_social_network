@@ -1,34 +1,35 @@
-import styles from './Users.module.css';
 import UserItem from "./UserItem/UserItem";
 import * as axios from 'axios';
+import * as React from "react";
 
-const Users = ({users, follow, unfollow, setUsers}) => {
-    let getUsers = () => {
-        if(users.length === 0 ) {
-            axios.get('https://social-network.samuraijs.com/api/1.0/users')
-                .then(response => {
-                    setUsers(response.data.items);
-                })
-        }
+class Users extends React.Component {
+    constructor(props) {
+        super(props);
     }
 
+    async componentDidMount() {
+        axios.get('https://social-network.samuraijs.com/api/1.0/users')
+            .then(response => {
+                this.props.setUsers(response.data.items);
+            });
 
-    let userItem = users.map(item => <UserItem key={item.id}
-                                               id={item.id}
-                                               name={item.name}
-                                               status={item.status}
-                                               photos={item.photos.small}
-                                               followed={item.followed}
-                                               follow={follow}
-                                               unfollow={unfollow}/>);
+        this.userItem = await this.props.users.map(item => <UserItem key={item.id}
+                                                               id={item.id}
+                                                               name={item.name}
+                                                               status={item.status}
+                                                               photos={item.photos.small}
+                                                               followed={item.followed}
+                                                               follow={this.props.follow}
+                                                               unfollow={this.props.unfollow}/>);
+    }
 
-    return (
-        <div>
-            <button onClick={getUsers}>getUsers</button>
-
-            {userItem}
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                {this.userItem}
+            </div>
+        )
+    }
 }
 
 export default Users;
