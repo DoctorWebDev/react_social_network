@@ -1,3 +1,17 @@
+.users_pagination {
+    overflow: auto;
+    max-width: 900px;
+}
+
+.users_pagination span {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
 .userItem {
     display: flex;
     flex-direction: row;
