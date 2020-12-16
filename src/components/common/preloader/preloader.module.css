@@ -1,0 +1,8 @@
+.preloader {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    left: 700px;
+}

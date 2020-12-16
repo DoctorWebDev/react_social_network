@@ -1,4 +1,5 @@
 .users_pagination {
+    height: 50px;
     overflow: auto;
     max-width: 900px;
 }

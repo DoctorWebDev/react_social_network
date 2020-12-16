@@ -3,13 +3,14 @@ const Unfollow_User = 'Unfollow_User';
 const Set_Users = 'Set_Users';
 const Set_Current_Page = 'Set_Current_Page';
 const Set_Total_Pages = 'Set_Total_Pages';
-
+const Toggle_Is_Loading = 'Toggle_Is_Loading';
 
 let initialState = {
     users: [ ],
-    totalCount: 20,
+    totalCount: 0,
     currentPage: 1,
-    pageSize: 5
+    pageSize: 5,
+    isLoading: false
 };
 
 const userReducer = (state = initialState, action) => {
@@ -40,15 +41,18 @@ const userReducer = (state = initialState, action) => {
             return {...state, currentPage: action.currentPage};
         case Set_Total_Pages:
             return {...state, totalCount: action.totalCount};
+        case Toggle_Is_Loading:
+            return {...state, isLoading: action.isLoading};
         default:
             return state;
     }
 };
 
-export const followAC = (userId) => ({type: Follow_User, userId});
-export const unfollowAC = (userId) => ({type: Unfollow_User, userId});
-export const setUsersAC = (users) => ({type: Set_Users, users});
-export const setCurrentPageAC = (currentPage) => ({type: Set_Current_Page, currentPage});
-export const setTotalPagesAC = (totalCount) => ({type: Set_Total_Pages, totalCount});
+export const follow = (userId) => ({type: Follow_User, userId});
+export const unfollow = (userId) => ({type: Unfollow_User, userId});
+export const setUsers = (users) => ({type: Set_Users, users});
+export const setCurrentPage = (currentPage) => ({type: Set_Current_Page, currentPage});
+export const setTotalPages = (totalCount) => ({type: Set_Total_Pages, totalCount});
+export const toggleIsLoading = (isLoading) => ({type: Toggle_Is_Loading, isLoading});
 
 export default userReducer;
