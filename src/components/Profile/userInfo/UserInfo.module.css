@@ -8,7 +8,7 @@
 .content_avatar img {
     border-radius: 5px;
     width: 150px;
-    height: 120px;
+    height: 150px;
 }
 
 .content_avatar_descr {
@@ -22,4 +22,16 @@
 .content_avatar_descr h2 {
     margin-top: 0;
     color: #149AC9;
+}
+
+.content_avatar_descr h2 span {
+    color: #413E3E;
+}
+
+.content_avatar_descr h4 {
+    margin: 0;
+}
+
+.content_avatar_descr h4 span {
+    font-weight: normal;
 }

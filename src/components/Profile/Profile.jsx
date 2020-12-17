@@ -1,14 +1,13 @@
 import MainPhoto from './mainPhoto/MainPhoto';
-import styles from './Profile.module.css';
 import UserInfo from './userInfo/UserInfo';
 import MyPostsContainer from "./myPosts/MyPostsContainer";
+import Preloader from "../common/preloader/preloader";
 
-const Profile = () => {
-
+const Profile = ({profileInfo}) => {
     return (
         <div>
             <MainPhoto/>
-            <UserInfo/>
+            <UserInfo profileInfo={profileInfo}/>
             <MyPostsContainer />
         </div>
     )
