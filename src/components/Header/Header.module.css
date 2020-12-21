@@ -14,3 +14,18 @@
     width: 45px;
     height: 45px;
 }
+
+.loginBlock {
+    float: right;
+    margin: 15px;
+}
+
+.loginBlock a {
+    text-decoration: none;
+    color: #939598;
+}
+
+.loginBlock h3 {
+    color: darkcyan;
+    margin: 0;
+}
