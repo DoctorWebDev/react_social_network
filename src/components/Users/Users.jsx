@@ -3,6 +3,7 @@ import * as React from "react";
 import avatar from "../../assets/images/avatar.png";
 import Preloader from "../common/preloader/preloader";
 import {NavLink} from "react-router-dom";
+import {apiUserData} from "../../api/api";
 
 const Users = (props) => {
     let totalPages = Math.ceil(props.totalCount / props.pageSize);
@@ -34,8 +35,20 @@ const Users = (props) => {
                     </div>
                     <div className={styles.btn}>
                         {item.followed ?
-                            <button onClick={() => {props.unfollow(item.id)} }>Unfollow</button> :
-                            <button onClick={()=> {props.follow(item.id)} }>Follow</button>}
+                            <button onClick={() => {
+                                apiUserData.unfollow(item.id).then(data => {
+                                        if (data.resultCode === 0) {
+                                            props.unfollow(item.id);
+                                        }
+                                    });
+                            } }>Unfollow</button> :
+                            <button onClick={()=> {
+                                apiUserData.follow(item.id).then(data => {
+                                        if (data.resultCode === 0) {
+                                            props.follow(item.id);
+                                        }
+                                    });
+                                } }>Follow</button>}
 
                     </div>
                 </div>)

@@ -1,7 +1,6 @@
 import MainPhoto from './mainPhoto/MainPhoto';
 import UserInfo from './userInfo/UserInfo';
 import MyPostsContainer from "./myPosts/MyPostsContainer";
-import Preloader from "../common/preloader/preloader";
 
 const Profile = ({profileInfo}) => {
     return (

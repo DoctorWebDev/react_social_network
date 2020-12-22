@@ -8,8 +8,8 @@ import {
     toggleIsLoading,
     unfollow
 } from "../../redux/usersReducer";
-import * as axios from "axios";
 import * as React from "react";
+import {apiUserData} from "../../api/api";
 
 class UsersClassContainer extends React.Component {
     constructor(props) {
@@ -18,21 +18,19 @@ class UsersClassContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsLoading(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(response => {
+        apiUserData.getUser(this.props.currentPage, this.props.pageSize).then(data => {
                 this.props.toggleIsLoading(false);
-                this.props.setUsers(response.data.items);
-                this.props.setTotalPages(response.data.totalCount);
+                this.props.setUsers(data.items);
+                this.props.setTotalPages(data.totalCount);
             });
     }
 
     onPageChanged = (pageNum) => {
         this.props.setCurrentPage(pageNum);
         this.props.toggleIsLoading(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNum}&count=${this.props.pageSize}`)
-            .then(response => {
+        apiUserData.getUser(pageNum, this.props.pageSize).then(data => {
                 this.props.toggleIsLoading(false);
-                this.props.setUsers(response.data.items);
+                this.props.setUsers(data.items);
             });
     }
 
@@ -64,6 +62,7 @@ let mapStateToProps = (state) => {
         isLoading: state.usersPage.isLoading
     }
 };
+
 /*
 let mapDispatchToProps = (dispatch) => {
     return {
